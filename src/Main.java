@@ -60,7 +60,7 @@ public class Main {
             System.out.println("There are contacts that share phone numbers.");
         }
         else{
-            System.out.println("All contacts have different phone numbers");
+            System.out.println("All contacts have different phone numbers.");
         }
     }
 
@@ -77,7 +77,7 @@ public class Main {
             System.out.println(PHONE_NOT_EXIST);
         }
         else{
-            System.out.printf("%s", cBook.getNameofContact(index));
+            System.out.printf("%s\n", cBook.getNameofContact(index));
         }
     }
     private static void addContact(Scanner in, ContactBook cBook) {

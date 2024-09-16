@@ -36,5 +36,5 @@ public class Contact {
         return name.equals(otherContact.getName());
     }
 
-    public boolean equalsPhone (Contact otherContact) { return this.phone == otherContact.getPhone(); }
+    public boolean equalsPhone (Contact otherContact) { return this.getPhone() == otherContact.getPhone(); }
 }

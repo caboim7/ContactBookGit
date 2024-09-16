@@ -16,15 +16,22 @@ public class ContactBook {
     }
 
     public boolean checkPhoneNumber() {
+        boolean found = false;
         int i = 0;
-        while(i < counter){
-            if (contacts[currentContact].equalsPhone(contacts[currentContact + 1])){
-                return true;
-            }
-            else{
-                i++;
-            }
-        }return false;
+        while (!found &&  i < counter) {
+            int j = counter - 1;
+           while (j > 0 && !found){
+               if (i == j){
+                   j--;
+               }
+               else{
+                   found = contacts[i].getPhone() == contacts[j].getPhone();
+                   j--;
+               }
+
+           }i ++;
+        }
+        return found;
     }
 
     //Pre: name != null
