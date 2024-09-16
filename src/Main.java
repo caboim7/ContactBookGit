@@ -40,7 +40,7 @@ public class Main {
                 case SET_PHONE-> setPhone(in,cBook);
                 case SET_EMAIL-> setEmail(in,cBook);
                 case LIST_CONTACTS-> listAllContacts(cBook);
-                case CONTACT_INFO->
+                case CONTACT_INFO-> //haha
                 default->
                     System.out.println(COMMAND_ERROR);
             }
