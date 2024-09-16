@@ -14,6 +14,7 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String CONTACT_INFO  = "GN";
+    public static final String SAME_NUMBERS = "EP";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -41,6 +42,7 @@ public class Main {
                 case SET_PHONE-> setPhone(in,cBook);
                 case SET_EMAIL-> setEmail(in,cBook);
                 case LIST_CONTACTS-> listAllContacts(cBook);
+                case SAME_NUMBERS -> checkSameNumbers(cBook);
                 case CONTACT_INFO-> searchContact(in,cBook);
                 default->
                     System.out.println(COMMAND_ERROR);
@@ -51,6 +53,15 @@ public class Main {
         System.out.println(QUIT_MSG);
         System.out.println();
         in.close();
+    }
+
+    private static void checkSameNumbers(ContactBook cBook) {
+        if (cBook.checkPhoneNumber()){
+            System.out.println("There are contacts that share phone numbers.");
+        }
+        else{
+            System.out.println("All contacts have different phone numbers");
+        }
     }
 
     private static String getCommand(Scanner in) {
