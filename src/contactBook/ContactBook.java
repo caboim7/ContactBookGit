@@ -80,6 +80,26 @@ public class ContactBook {
         contacts = tmp;
     }
 
+    private int searchIndexByNumber(int number) {
+        int i = 0;
+        int result = -1;
+        boolean found = false;
+        while (i<counter && !found)
+            if (contacts[i].getPhone() == number )
+                found = true;
+            else
+                i++;
+        if (found) result = i;
+        return result;
+    }
+
+    public int hasContactWithNumber(int number) {
+        return searchIndexByNumber(number);
+    }
+    public String getNameofContact(int index) {
+        return contacts[index].getName();
+    }
+
     public void initializeIterator() {
         currentContact = 0;
     }
